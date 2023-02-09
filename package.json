@@ -31,6 +31,7 @@
     "@typescript-eslint/parser": "^5.36.1",
     "babel-jest": "28.1.1",
     "canvas": "^2.11.0",
+    "canvas-constructor": "^7.0.0",
     "cypress": "^12.2.0",
     "eslint": "~8.15.0",
     "eslint-config-next": "13.1.1",

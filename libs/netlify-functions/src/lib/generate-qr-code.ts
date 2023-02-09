@@ -1,6 +1,6 @@
 import { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
+import { Canvas, loadImage } from 'canvas-constructor/cairo';
 import QRCode from 'qrcode';
-const { createCanvas, loadImage } = require('canvas');
 
 // https://letmegooglethat.com/?q=anda+palla+bobo
 
@@ -25,17 +25,21 @@ const handler: Handler = async (
   const qrCode = await QRCode.toDataURL(event.queryStringParameters['url']);
   const qrImage = await loadImage(qrCode);
   const ticket = await loadImage(ticketTemplate);
-  const canvas = createCanvas(ticket.width, ticket.height, 'pdf');
-  const ctx = canvas.getContext('2d');
 
-  ctx.drawImage(qrImage, ticket.width / 2 - 75, 50, 150, 150);
+  const canvas = new Canvas(ticket.width, ticket.height, 'pdf').printImage(
+    qrImage,
+    ticket.width / 2 - 75,
+    50,
+    150,
+    150
+  );
 
   return {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/pdf',
     },
-    body: canvas.toBuffer().toString('base64'),
+    body: (await canvas.pdfAsync()).toString('base64'),
     isBase64Encoded: true,
   };
 };

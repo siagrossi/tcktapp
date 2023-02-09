@@ -21,6 +21,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.36.1
   babel-jest: 28.1.1
   canvas: ^2.11.0
+  canvas-constructor: ^7.0.0
   cypress: ^12.2.0
   eslint: ~8.15.0
   eslint-config-next: 13.1.1
@@ -72,6 +73,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.51.0_oy7hgmlo6357d5kkcjbkfgtg4q
   babel-jest: 28.1.1_@babel+core@7.20.12
   canvas: 2.11.0
+  canvas-constructor: 7.0.0
   cypress: 12.5.1
   eslint: 8.15.0
   eslint-config-next: 13.1.1_oy7hgmlo6357d5kkcjbkfgtg4q
@@ -3642,6 +3644,13 @@ packages:
 
   /caniuse-lite/1.0.30001451:
     resolution: {integrity: sha512-XY7UbUpGRatZzoRft//5xOa69/1iGJRBlrieH6QYrkKLIFn3m7OVEJ81dSrKoy2BnKsdbX5cLrOispZNYo9v2w==}
+
+  /canvas-constructor/7.0.0:
+    resolution: {integrity: sha512-q74a5JU/UxKaUXYYgF5rqulNZDvXOw5WmuTqc2ffxVILL0Zz6YBlJi7vlCPhrv1GiBHTdbrHdoMlQ7/VQ2Z8vg==}
+    engines: {node: '>=v14.18.0'}
+    dependencies:
+      tslib: 2.5.0
+    dev: true
 
   /canvas/2.11.0:
     resolution: {integrity: sha512-bdTjFexjKJEwtIo0oRx8eD4G2yWoUOXP9lj279jmQ2zMnTQhT8C3512OKz3s+ZOaQlLbE7TuVvRDYDB3Llyy5g==}
