@@ -1,6 +1,6 @@
 import { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
 import QRCode from 'qrcode';
-import { createCanvas, loadImage } from 'canvas';
+const { createCanvas, loadImage } = require('canvas');
 
 // https://letmegooglethat.com/?q=anda+palla+bobo
 
